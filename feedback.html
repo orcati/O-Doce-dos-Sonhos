@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - O Doce do Sonhos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para o contêiner de feedback */
+        .feedback-container {
+            border-radius: 10px; /* Borda arredondada */
+            background-color: #f2f2f2; /* Cor de fundo */
+            padding: 20px; /* Espaçamento interno */
+            margin-top: 20px; /* Margem superior */
+        }
+
+        .feedback-container input[type="text"],
+        .feedback-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .feedback-container input[type="submit"] {
+            background-color: #ff6262;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .feedback-container input[type="submit"]:hover {
+            background-color: #ff4242;
+        }
+
+        .feedback-list {
+            margin-top: 20px;
+        }
+
+        .feedback-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <table>
+                <tr>
+                    <td><img src="imagens/logo.jpg" width="100px" class="imglogo"></td>
+                  <td><div class="logo">O Doce do Sonhos</div></td>
+                </tr>
+              </table>
+            <ul>
+                <li><a href="index.html" class="nav-link">Página Principal</a></li>
+                <li><a href="cardapio.html" class="nav-link">Cardápio</a></li>
+                <li><a href="sobre.html" class="nav-link">Sobre Nós</a></li>
+                <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+                <li><a href="contato.html" class="nav-link">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="feedback">
+        <div class="container">
+            <h2>Feedback</h2>
+            <div class="feedback-container">
+                <form id="feedback-form">
+                    <div class="input-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+
+            <!-- Lista de feedbacks -->
+            <div class="feedback-list">
+                <h3>Feedbacks anteriores:</h3>
+                <div id="feedback-items"></div>
+            </div>
+        </div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <footer>
+        <p>&copy; 2024 O Doce do Sonhos</p>
+    </footer>
+
+    <script>
+        // Função para adicionar um feedback à lista na página
+        function addFeedbackToList(name, message) {
+            var feedbackList = document.getElementById('feedback-items');
+            var feedbackItem = document.createElement('div');
+            feedbackItem.classList.add('feedback-item');
+            feedbackItem.innerHTML = '<strong>' + name + ':</strong> ' + message;
+            feedbackList.appendChild(feedbackItem);
+        }
+
+        // Adiciona um evento de envio para o formulário de feedback
+        document.getElementById('feedback-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Obtém os valores dos campos de entrada
+            var name = document.getElementById('name').value;
+            var message = document.getElementById('message').value;
+
+            // Adiciona o feedback à lista na página
+            addFeedbackToList(name, message);
+
+            // Armazena o feedback no localStorage
+            var feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+            feedbacks.push({ name: name, message: message });
+            localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+
+            // Limpa os campos do formulário
+            document.getElementById('name').value = '';
+            document.getElementById('message').value = '';
+        });
+
+        // Exibe feedbacks salvos no localStorage ao carregar a página
+        window.onload = function() {
+            var savedFeedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+            savedFeedbacks.forEach(function(feedback) {
+                addFeedbackToList(feedback.name, feedback.message);
+            });
+        };
+    </script>
+</body>
+</html>
+

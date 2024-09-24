@@ -1,0 +1,309 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.imglogo{
+    margin-right: 15px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Estilos para o banner */
+#banner {
+    background-image: url('imagens/brownieNinho.jpg'); /* Substitua 'banner.jpg' pelo caminho da sua imagem de banner */
+    background-size: cover;
+    background-position: center;
+    color: black;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.banner-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.banner-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Estilos para a seção Cardápio */
+#cardapio {
+    background-color: #f8f8f8;
+}
+
+#cardapio .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#cardapio h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.menu-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px; 
+    position: center;
+}
+
+.menu-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    font-size: 16px;
+}
+
+.price {
+    font-weight: bold;
+}
+
+/* Estilos para a seção Sobre Nós */
+#sobre-nos {
+    background-color: #f8f8f8;
+}
+
+#sobre-nos .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#sobre-nos h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#sobre-nos p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Estilos para a seção Feedback */
+#feedback {
+    background-color: #f8f8f8;
+}
+
+#feedback .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#feedback h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#feedback-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#feedback-form input[type="text"],
+#feedback-form input[type="email"],
+#feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#feedback-form textarea {
+    height: 150px;
+}
+
+#feedback-form button {
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#feedback-form button:hover {
+    background-color: #e65c5c;
+}
+
+/* Estilos para a seção Contato */
+#contato {
+    background-color: #f8f8f8;
+}
+
+#contato .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#contato h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#contato p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#contact-form textarea {
+    height: 150px;
+}
+
+#contact-form button {
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background-color: #e65c5c;
+}
+
+
+/* parte vitrine malu */
+
+#Destaques{
+    font-size: 30px;
+    text-align: center;
+    margin: 30px;
+    
+}
+  
+  
+  /*mais vendidos*/
+  
+.vendas-container {
+    position: relative;
+    width: 50%;
+    margin: 15px;
+}
+  
+.imagevendas {
+    
+    margin-right: 30px;
+    margin-left: 35px;
+    padding-bottom: 30px;
+    
+}
+  
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ff6b6b;
+    overflow: hidden;
+    width: 180%;
+    height: 105%;
+    transform: scale(0);
+    transition: .3s ease;
+}
+  
+.vendas-container:hover .overlay {
+    transform: scale(1);
+}
+  
+.vendastext {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+  
+  
+.flex {
+      flex: 1;
+}
+
+
